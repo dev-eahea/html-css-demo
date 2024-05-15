@@ -1,0 +1,354 @@
+/*-----------------------------------------------------------------------------------
+
+CSS INDEX
+    ===================
+  
+    Header Area
+    About Area
+    Portfolio Area
+    Footer Area
+
+-----------------------------------------------------------------------------------*/
+
+/*============= Header Area ===============*/
+.header_area {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: #202020;
+}
+.logo a {
+  display: inline-block;
+  & img {
+    max-width: 43px;
+  }
+}
+.main_menu nav ul {
+  text-align: right;
+  & li {
+    display: inline-block;
+    & a {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0;
+      padding: 35px 17px;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 17%;
+        height: 7px;
+        width: 7px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0;
+        transform: translateX(-50%);
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+      }
+      &:after {
+        content: attr(data-hover);
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        opacity: 0;
+        transform: translateX(-50%);
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+      }
+      &:hover:after {
+        opacity: 1;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      & span {
+        display: block;
+        -webkit-transition: all 0.15s ease-in-out 0s;
+        -o-transition: all 0.15s ease-in-out 0s;
+        transition: all 0.15s ease-in-out 0s;
+      }
+      &:hover span {
+        transform: translate3d(0, -12px, 0);
+        opacity: 0;
+      }
+    }
+    &.active a:before {
+      opacity: 1;
+    }
+  }
+}
+
+/* mobile menu*/
+
+.slicknav_btn {
+  background-color: transparent;
+  position: relative;
+  margin-top: -38px;
+}
+
+.slicknav_menu {
+  background: transparent;
+  margin-top: 0;
+
+  & .slicknav_menutxt {
+    display: none;
+  }
+
+  & .slicknav_icon-bar {
+    height: 2px;
+    width: 19px;
+    margin: 3px 0px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  & .slicknav_open .slicknav_icon-bar {
+    & :nth-child(2) {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    & :nth-child(1) {
+      -webkit-transform: rotate(45deg) translate(1px, 7px);
+      transform: rotate(45deg) translate(1px, 7px);
+    }
+    & :nth-child(3) {
+      -webkit-transform: rotate(-45deg) translateY(-6px);
+      transform: rotate(-45deg) translateY(-6px);
+    }
+  }
+}
+
+.slicknav_nav {
+  background: #0c0c0c;
+  margin: 0;
+  padding: 6px 0px;
+  margin-top: 10px;
+  & a {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    &:hover {
+      background: #fefefe none repeat scroll 0 0;
+      border-radius: 0;
+    }
+  }
+}
+
+/*============== END Header Area ==============*/
+
+/*============== About Area ===============*/
+.about_area {
+  padding: 100px 0px 150px;
+}
+.about_area__thumbnail {
+  display: block;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.3);
+  &:before {
+    content: "";
+    position: absolute;
+    right: -45px;
+    bottom: -45px;
+    border: 2px solid #f3f2f2;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 0px 0px 30px 0px;
+  }
+  & img {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
+.section_title {
+  font-size: 29px;
+  letter-spacing: 0;
+  color: #222222;
+  line-height: 30px;
+  margin-bottom: 50px;
+  padding-bottom: 16px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: #202020;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 255px;
+    background-color: #202020;
+  }
+  & p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 19px;
+  }
+}
+.social_link {
+  display: inline-block;
+  margin-top: 11px;
+  & h5 {
+    font-family: "Montserrat", sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 600;
+    color: #222222;
+    margin-right: 22px;
+  }
+  a {
+    display: inline-block;
+    font-size: 15px;
+    color: #333333;
+    margin-right: 11px;
+  }
+  &:hover a {
+    color: #888;
+  }
+  & a:hover {
+    color: #000;
+  }
+}
+/*=============== END About Area =================*/
+
+/*=============== Portfolio Area =================*/
+.portfolio_area {
+  position: relative;
+}
+.portfolio_categories {
+  margin-bottom: 50px;
+  & button {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-bottom: 6px;
+    position: relative;
+    margin-right: 21px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 7px;
+      width: 7px;
+      opacity: 0;
+      background: #464444;
+      border-radius: 50%;
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+    }
+    &.active:before {
+      opacity: 1;
+    }
+  }
+}
+.portfolio_item {
+  margin-bottom: 30px;
+
+  &:has(.expand-video) {
+    & a {
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+    }
+    &:hover a.expand-video:before {
+      opacity: 1;
+    }
+  }
+
+  & a {
+    display: block;
+    &:hover {
+      box-shadow: 0px 10px 27px rgba(0, 0, 0, 0.1);
+    }
+    & img {
+      max-width: 100%;
+      display: inline-block;
+    }
+    &.expand-video {
+      position: relative;
+      z-index: 1;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background-color: rgba(27, 27, 27, 0.5);
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+      }
+      & span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        &:before {
+          font-size: 50px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/*============== END Portfolio Area ===============*/
+
+/*================ Footer Area ==================*/
+.footer_area {
+  padding: 18px 0px;
+  position: relative;
+}
+.footer_area__copyright {
+  text-align: right;
+  & p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #898989;
+    & span {
+      display: inline-block;
+      color: #333;
+    }
+  }
+}
+.footer_area__logo a img {
+  max-width: 40px;
+}
+
+/*============= END Footer Area ===============*/
